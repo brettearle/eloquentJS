@@ -1,6 +1,4 @@
-console.log("hello fizz buzz");
-
-const fizzBuzz = () => {
+export default function FizzBuzz() {
   const buzz = "buzz";
   const fizz = "fizz";
   let str = "";
@@ -17,6 +15,4 @@ const fizzBuzz = () => {
     }
     console.log(str);
   }
-};
-
-fizzBuzz();
+}
