@@ -1,6 +1,9 @@
 {
   "name": "eloquentjs",
   "version": "1.0.0",
+  "engines": {
+    "node": "v16.17.1"
+  },
   "description": "EloquentJs with Tests",
   "main": "index.js",
   "type": "module",

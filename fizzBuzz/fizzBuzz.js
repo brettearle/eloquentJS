@@ -2,6 +2,7 @@ export default function FizzBuzz() {
   const buzz = "buzz";
   const fizz = "fizz";
   let str = "";
+  let arr = [];
   for (let count = 0; count <= 100; count++) {
     str = `${count}`;
     if (count % 3 === 0) {
@@ -14,5 +15,6 @@ export default function FizzBuzz() {
       str = fizz + buzz;
     }
     console.log(str);
+    return arr;
   }
 }
