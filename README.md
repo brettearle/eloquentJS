@@ -10,6 +10,6 @@
 #### Cloning
 
 - clone down repo
-- run npm install
 - cd to this project.
+- run npm install
 - npm test in your terminal to check it's working.
