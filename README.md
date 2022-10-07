@@ -6,6 +6,15 @@
 
 - learn jest
 - read and understand the deepdive of eloquent JS
+- apply principles of good testing
+- use tests to rapidly iterate and make problems extendable
+- deepdive into more advanced topics of JS
+
+### Tech Used
+
+- node
+- JS
+- Jest
 
 #### Cloning
 

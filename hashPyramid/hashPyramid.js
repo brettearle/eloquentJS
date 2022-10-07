@@ -1,13 +1,12 @@
-console.log("hello hashPyramid");
-
-const hashPyramid = () => {
-  let str = "";
-
-  for (let count = 0; count <= 7; count++) {
-    const hash = "#";
-    str = str + hash;
-    console.log(str);
+const buildPyramid = (numOfLines) => {
+  let returnStr = "";
+  for (let index = 0; index < numOfLines; index++) {
+    returnStr = returnStr + "#";
   }
+  return returnStr;
 };
 
-hashPyramid();
+export default function HashPyramid(lines) {
+  let str = buildPyramid(lines);
+  return str;
+}
