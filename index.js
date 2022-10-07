@@ -1,6 +1,6 @@
 import FizzBuzz from "./fizzBuzz/fizzBuzz.js";
 const App = () => {
-  FizzBuzz();
+  FizzBuzz(15);
 };
 
 App();
