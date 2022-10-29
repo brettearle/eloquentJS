@@ -2,12 +2,12 @@ const IsEven = (num) => {
   if (typeof num !== "number") {
     throw new Error("no number provided to IsEven");
   } else {
-    if (num === 1) {
+    const absNum = Math.abs(num);
+    if (absNum === 1) {
       return "Number is Odd";
-    } else if (num === 0) {
+    } else if (absNum === 0) {
       return "Number is Even";
     } else {
-      const absNum = Math.abs(num);
       return IsEven(absNum - 2);
     }
   }
