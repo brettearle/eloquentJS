@@ -3,7 +3,11 @@ const SumOfRange = (s, f)=>{
         if ( s === undefined || f === undefined){
          throw "range only takes 2 int args, start and end"
         } else {
-        return []
+            let result = 0
+            for(let i = s; i <= f; i++){
+                result = result + i  
+            }
+            return result
         }
     } catch (err){
        throw err 

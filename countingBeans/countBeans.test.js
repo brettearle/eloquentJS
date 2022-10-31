@@ -5,7 +5,7 @@ test("countB should be type function", () => {
 });
 
 test("countB called with no args throws 'no string provided'", () => {
-  expect(() => {
+   expect(() => {
     countB();
   }).toThrow("no string provided");
 });
