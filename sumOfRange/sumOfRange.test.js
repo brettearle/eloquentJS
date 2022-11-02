@@ -40,3 +40,9 @@ test("step range should take 3 arguments, start, finish, stepVal as ints",()=>{
   const expected = [1,3,5,7,9]
   expect(got).toEqual(expected)
 })
+
+test("should work when negative step val is provided", ()=>{
+  const got = Range(1, 10, -1)
+  const expected= [10,9,8,7,6,5,4,3,2,1]
+  expect(got).toEqual(expected)
+})

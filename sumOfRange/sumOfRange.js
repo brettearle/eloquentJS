@@ -1,34 +1,37 @@
-const SumOfRange = (s, f)=>{
-    if ( s === undefined || f === undefined){
-     throw "range only takes 2 int args, start and end"
-    } else {
-        let result = 0
-        for(let i = s; i <= f; i++){
-            result = result + i  
-        }
-        return result
+const SumOfRange = (s, f) => {
+  if (s === undefined || f === undefined) {
+    throw "range only takes 2 int args, start and end";
+  } else {
+    let result = 0;
+    for (let i = s; i <= f; i++) {
+      result = result + i;
     }
-}
+    return result;
+  }
+};
 
-const Range = (s, f, step)=>{ 
-   if (s === undefined || f === undefined){
-       throw new Error("start or finished undefined")
-   } else {
-    if (step === undefined){
-     let result = []
-     for(let i = s; i <= f; i++) {
-         result.push(i)
+const Range = (s, f, step) => {
+  const starter = s > f ? f : s
+  const finisher = s > f ? s : f
+  if (s === undefined || f === undefined) {
+    throw new Error("start or finished undefined");
+  } else {
+    if (step === undefined) {
+      let result = [];
+      for (let i = starter; i <= finisher; i++) {
+        result.push(i);
       }
-         return result
+      return result;
     } else {
-      let r = []
-      for(let i = s; i <= f; i += step) {
-        r.push(i)        
+      let r = [];
+      const abStep = Math.abs(step)
+      for (let i = starter; i <= finisher; i+= abStep) {
+        r.push(i);
       }
-      return r
+      r = step > -1 ? r.sort((a,b)=>a-b) : r.sort((a,b)=>b-a)
+      return r;
     }
-   }
-}
+  }
+};
 
-export { SumOfRange, Range } 
-
+export { SumOfRange, Range };
