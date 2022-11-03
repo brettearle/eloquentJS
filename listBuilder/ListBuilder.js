@@ -21,4 +21,11 @@ const ArrayToList = (arr) => {
   }
 }
 
-export { ArrayToList }
+const ListToArray = (list) => {
+  if (list === undefined || typeof list !== 'object'){
+    throw new Error('requires list as arg')
+  }
+  return []
+}
+
+export { ArrayToList , ListToArray }
