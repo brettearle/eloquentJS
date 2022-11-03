@@ -77,6 +77,10 @@ describe('ListToArray', () => {
     }).toThrow('requires list as arg')
   })
 
-  
+ test('given {value: 1, rest: {value: 2, rest: null}} return [1,2]', () => {
+   const got = ListToArray({value: 1, rest: {value: 2, rest: null}})
+   const exp = [1,2]
+   expect(got).toEqual(exp)
+ })
 
 })

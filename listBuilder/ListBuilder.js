@@ -24,8 +24,24 @@ const ArrayToList = (arr) => {
 const ListToArray = (list) => {
   if (list === undefined || typeof list !== 'object'){
     throw new Error('requires list as arg')
-  }
-  return []
+  } else {
+    console.log(list)
+  const getValues = (remainingList, emptyArr) => {
+      let eA = emptyArr
+      if (remainingList.value !== null || remainingList.value !== undefined) {
+        console.log(remainingList)
+        let val = remainingList.value
+        eA.push(val) 
+      }
+      if (remainingList.rest === null) {
+        return eA
+      } else {
+        console.log(remainingList.rest)
+        getValues(remainingList.rest, eA)
+      } 
+    }  
+    return getValues(list, [])
+}
 }
 
 export { ArrayToList , ListToArray }
