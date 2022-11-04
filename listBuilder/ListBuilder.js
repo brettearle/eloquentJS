@@ -25,23 +25,39 @@ const ListToArray = (list) => {
   if (list === undefined || typeof list !== 'object'){
     throw new Error('requires list as arg')
   } else {
-    console.log(list)
-  const getValues = (remainingList, emptyArr) => {
-      let eA = emptyArr
-      if (remainingList.value !== null || remainingList.value !== undefined) {
-        console.log(remainingList)
-        let val = remainingList.value
-        eA.push(val) 
-      }
-      if (remainingList.rest === null) {
-        return eA
-      } else {
-        console.log(remainingList.rest)
-        getValues(remainingList.rest, eA)
-      } 
+    if(list.value !== undefined){
+      let ll = list
+      let head = [list.value]
+      while (ll.rest !== null){
+       ll = ll.rest
+       head.push(ll.value)
+    }
+      return head
+    } else {
+      return []
     }  
-    return getValues(list, [])
-}
+    }
 }
 
-export { ArrayToList , ListToArray }
+const Prepend = (value, list) => {
+  if(value === undefined || list === undefined || typeof list !== 'object'){
+    throw new Error('needs a value and list')
+  } else {
+    return {value: value, rest: list}
+  }
+}
+
+const GetNth = (nth, list) => {
+  let ll = list.rest
+  for(let i = 0; i <= nth ; i++){
+   ll.rest ? ll = ll.rest : console.log('rest is null') 
+   if(i === nth ){
+    return {
+      value: ll.value,
+      rest: ll.rest
+    }     
+   } 
+  }
+  }
+
+export { ArrayToList , ListToArray, Prepend, GetNth }
