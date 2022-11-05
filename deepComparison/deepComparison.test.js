@@ -18,4 +18,10 @@ describe("DeepComparison", () => {
       expect(DeepComparison())
     }).toThrow('Error: args list')
   })
+
+  test("DeepComparison should return false when called with 2 different types", () => {
+    const got = DeepComparison("Hello", 2)
+    const exp = false
+    expect(got).toEqual(exp)
+  })
 })
