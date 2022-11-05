@@ -5,6 +5,8 @@ const DeepComparison = (a, b) => {
   } else {
     if (a !== null && b !== null){
     return a === b 
+    } else if (a === null && b !== null || a !== null && b === null){
+      return false
     }
   }
 } 

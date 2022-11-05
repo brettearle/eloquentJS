@@ -19,8 +19,20 @@ describe("DeepComparison", () => {
     }).toThrow('Error: args list')
   })
 
-  test("DeepComparison should return false when called with 2 different types", () => {
+  test("DeepComparison should return false when called with 2 different args", () => {
     const got = DeepComparison("Hello", 2)
+    const exp = false
+    expect(got).toEqual(exp)
+  })
+
+  test("DeepComparison should return true when called with 2 same args", () => {
+    const got = DeepComparison(2, 2)
+    const exp = true
+    expect(got).toEqual(exp)
+  })
+
+  test("called with null and a object should return false", () => {
+    const got = DeepComparison(null, {val: 1})
     const exp = false
     expect(got).toEqual(exp)
   })
