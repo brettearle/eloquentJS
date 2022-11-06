@@ -15,7 +15,7 @@ function checkArrayDeep(a,b){
     for (let index = 0; index < length; index++) {
       const aEl = a[index]
       const bEl = b[index]
-      if (aEl !== bEl){
+      if (DeepComparison(aEl, bEl) === false){
         result = false
       } 
     }
@@ -31,7 +31,7 @@ function checkObjectDeep(a,b){
   if (checkArrayDeep(aKeys, bKeys) === false){
     return false
   } else {
-    return checkArrayDeep(aVals, bVals)
+    return DeepComparison(aVals, bVals)
   }
 }
 

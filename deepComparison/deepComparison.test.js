@@ -78,4 +78,28 @@ describe("DeepComparison", () => {
     const exp = true
     expect(got).toEqual(exp)
   })
+
+  test("called with array with nested objects of same values and keys returns true", () => {
+    const got = DeepComparison([{v:2,a:2}, {v:2,a:2}],[{v:2,a:2}, {v:2,a:2}])
+    const exp = true
+    expect(got).toEqual(exp)
+  })
+
+  test("called with array with nested objects of same values and diff keys returns false", () => {
+    const got = DeepComparison([{v:2,a:2}, {v:2,a:2}],[{v:2,a:2}, {v:2,b:2}])
+    const exp = false
+    expect(got).toEqual(exp)
+  })
+
+  test("called with array with nested arrays of same values returns true", () => {
+    const got = DeepComparison([[1,2,[1,2,3]],[1,2,[1,2,3]]], [[1,2,[1,2,3]],[1,2,[1,2,3]]])
+    const exp = true
+    expect(got).toEqual(exp)
+  })
+
+  test("called with array with nested arrays of diff values returns false", () => {
+    const got = DeepComparison([[1,2,[1,2,3]],[1,2,[1,2,3]]], [[1,2,[1,2,"jimmy crickets"]],[1,2,[1,2,3]]])
+    const exp = false
+    expect(got).toEqual(exp)
+  })
 })
