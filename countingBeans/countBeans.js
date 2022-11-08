@@ -30,7 +30,7 @@ const countChar = (str, char) => {
   }
 };
 
-const check = function (strLetter, providedChar) {
+const check = function(strLetter, providedChar) {
   return strLetter === providedChar ? 1 : 0;
 };
 
