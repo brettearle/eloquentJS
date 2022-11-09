@@ -2,10 +2,10 @@ function checkTypeArray(a,b){
   if (Array.isArray(a) && Array.isArray(b)){
     return true
   } else {
-    return false
+   return false
   }
 }
-
+  
 function checkArrayDeep(a,b){
   if (a.length !== b.length){
     return false
