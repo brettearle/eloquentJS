@@ -1,13 +1,13 @@
-function checkTypeArray(a,b){
-  if (Array.isArray(a) && Array.isArray(b)){
+function checkTypeArray(a, b) {
+  if (Array.isArray(a) && Array.isArray(b)) {
     return true
   } else {
-   return false
+    return false
   }
 }
-  
-function checkArrayDeep(a,b){
-  if (a.length !== b.length){
+
+function checkArrayDeep(a, b) {
+  if (a.length !== b.length) {
     return false
   } else {
     let result = true
@@ -15,20 +15,20 @@ function checkArrayDeep(a,b){
     for (let index = 0; index < length; index++) {
       const aEl = a[index]
       const bEl = b[index]
-      if (DeepComparison(aEl, bEl) === false){
+      if (DeepComparison(aEl, bEl) === false) {
         result = false
-      } 
+      }
     }
     return result
   }
 }
 
-function checkObjectDeep(a,b){
+function checkObjectDeep(a, b) {
   const aKeys = Object.keys(a)
   const bKeys = Object.keys(b)
   const aVals = Object.values(a)
   const bVals = Object.values(b)
-  if (checkArrayDeep(aKeys, bKeys) === false){
+  if (checkArrayDeep(aKeys, bKeys) === false) {
     return false
   } else {
     return DeepComparison(aVals, bVals)
@@ -38,22 +38,22 @@ function checkObjectDeep(a,b){
 const DeepComparison = (a, b) => {
   if (a === undefined || b === undefined) {
     throw new Error("Error: args list");
-    
+
   } else {
-    if (a === null && b !== null || a !== null && b === null){
+    if (a === null && b !== null || a !== null && b === null) {
       return false
     } else if (a === null && b === null) {
       return true
     } else if (typeof a === 'object' && typeof b === 'object') {
-      if (checkTypeArray(a,b)){
-       return checkArrayDeep(a,b)
+      if (checkTypeArray(a, b)) {
+        return checkArrayDeep(a, b)
       } else {
-       return checkObjectDeep(a,b)
-      }  
-    } else if (a !== null && b !== null){
-    return a === b 
+        return checkObjectDeep(a, b)
+      }
+    } else if (a !== null && b !== null) {
+      return a === b
     }
   }
-} 
+}
 
-export {DeepComparison}
+export { DeepComparison }

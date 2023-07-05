@@ -1,4 +1,4 @@
-const Min = function () {
+const Min = function() {
   if (arguments.length !== 0) {
     const args = [...arguments];
     let result = Infinity;
