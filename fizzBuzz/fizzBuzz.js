@@ -17,5 +17,7 @@ export default function FizzBuzz(countArg) {
     arr.push(str);
   }
   console.log(arr);
+  
   return arr;
 }
+

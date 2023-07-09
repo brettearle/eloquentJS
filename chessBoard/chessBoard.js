@@ -24,11 +24,16 @@ const ChessBoard = (x, y) => {
   if (Number.isInteger(x) === false || Number.isInteger(y) === false) {
     throw new Error("ChessBoard needs to be called with a int for x and y");
   } else {
-   const xString = getXString(x);
+    const xString = getXString(x);
     const board = generateBoard(xString, y);
     console.log(board);
     return board;
   }
 };
 
+
+  
+
 export { getXString, ChessBoard, generateBoard };
+
+
